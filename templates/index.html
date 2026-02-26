@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Grammar Corrector</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+
+<div class="container">
+
+    <header>
+        <h1>Grammar Corrector</h1>
+        <p class="subtitle">Improve your writing with AI-powered grammar correction.</p>
+    </header>
+
+    <form method="POST" class="form-box">
+        <textarea name="text" placeholder="Type your sentence here...">{{ original }}</textarea>
+        <button type="submit">Check Grammar</button>
+    </form>
+
+    {% if corrected %}
+    <div class="result-section">
+        <h3>Corrected Version</h3>
+        <div class="result-box">
+            {{ corrected }}
+        </div>
+    </div>
+    {% endif %}
+
+</div>
+
+</body>
+</html>
